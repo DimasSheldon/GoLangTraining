@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/avenir-next-lt-pro" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      color: #3d3d3d;
+    }
+    
+    header {
+      text-align: center;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      padding: 50px;
+    }
+
+    header h1 {
+      margin-bottom: 25px;
+    }
+
+    header hr {
+      max-width: 1125px;
+      margin: auto;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .card {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .card .title {
+      padding: 25px;
+    }
+
+    .card h2 {
+      margin: 50px auto;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      padding: 10px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .safe {
+      background-color: green;
+      color: white;
+    }
+
+    .alert {
+      background-color: yellow;
+    }
+
+    .danger {
+      background-color: red;
+      color: white;
+    }
+    
+
+    footer {
+      margin-top: 25px;
+      font-family: Inter, serif-serif;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer hr {
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <h1>Update Water and Wind Status within 15 Second with Random Number 1-100</h1><hr>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1 class="title">Water</h1><hr>
+      <h2>{{ .water }}</h2>
+      <h3 class="{{ .waterClass }}">{{ .waterStatus }}</h3>
+    </div>
+    <div class="card">
+      <h1 class="title">Wind</h1><hr>
+      <h2>{{ .wind }}</h2>
+      <h3 class="{{ .windClass }}">{{ .windStatus }}</h3>
+    </div>
+  </main>
+
+  <footer><hr>
+    <p>Copyright &copy; 2022</p>
+    <p>Hacktiv8: Scalable Web Service with Golang</p>
+  </footer>
+
+  <script type="text/javascript">
+    window.setTimeout(function(){ document.location.reload(true); }, 15000);
+  </script>
+
+</body>
+</html>
